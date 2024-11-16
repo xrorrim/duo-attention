@@ -1,0 +1,348 @@
+python /NFS/raid5/home/ruyi/code/duo-attention/eval/RULER/data/synthetic/qa.py             --save_dir  benchmark_root/Llama-3-8B-Instruct-Gradient-1048k/synthetic/65536/data             --save_name qa_2             --subset validation             --tokenizer_path /home/ruyi/code/duo-attention/models/Llama-3-8B-Instruct-Gradient-1048k             --tokenizer_type hf             --max_seq_length 65536             --tokens_to_generate 32             --num_samples 500             --random_seed 42             --dataset hotpotqa                          --pre_samples 0             --template "<|begin_of_text|><|start_header_id|>user<|end_header_id|>
+
+Answer the question based on the given documents. Only give me the answer and do not output any other words.
+
+The following are given documents.
+
+{context}
+
+Answer the question based on the given documents. Only give me the answer and do not output any other words.
+
+Question: {query}<|eot_id|><|start_header_id|>assistant<|end_header_id|>
+
+ Answer:"
+            
+Output:
+Max length 65536 | Current length 1267 | Docs: 10
+Max length 65536 | Current length 2505 | Docs: 20
+Max length 65536 | Current length 3776 | Docs: 30
+Max length 65536 | Current length 5036 | Docs: 40
+Max length 65536 | Current length 6900 | Docs: 50
+Max length 65536 | Current length 7874 | Docs: 60
+Max length 65536 | Current length 8281 | Docs: 70
+Max length 65536 | Current length 9560 | Docs: 80
+Max length 65536 | Current length 11855 | Docs: 90
+Max length 65536 | Current length 12694 | Docs: 100
+Max length 65536 | Current length 14787 | Docs: 110
+Max length 65536 | Current length 16060 | Docs: 120
+Max length 65536 | Current length 15814 | Docs: 130
+Max length 65536 | Current length 17986 | Docs: 140
+Max length 65536 | Current length 19260 | Docs: 150
+Max length 65536 | Current length 20028 | Docs: 160
+Max length 65536 | Current length 22649 | Docs: 170
+Max length 65536 | Current length 23130 | Docs: 180
+Max length 65536 | Current length 24698 | Docs: 190
+Max length 65536 | Current length 25288 | Docs: 200
+Max length 65536 | Current length 27793 | Docs: 210
+Max length 65536 | Current length 28969 | Docs: 220
+Max length 65536 | Current length 31210 | Docs: 230
+Max length 65536 | Current length 32751 | Docs: 240
+Max length 65536 | Current length 33093 | Docs: 250
+Max length 65536 | Current length 35888 | Docs: 260
+Max length 65536 | Current length 36265 | Docs: 270
+Max length 65536 | Current length 37102 | Docs: 280
+Max length 65536 | Current length 38074 | Docs: 290
+Max length 65536 | Current length 40844 | Docs: 300
+Max length 65536 | Current length 42481 | Docs: 310
+Max length 65536 | Current length 40671 | Docs: 320
+Max length 65536 | Current length 44443 | Docs: 330
+Max length 65536 | Current length 42766 | Docs: 340
+Max length 65536 | Current length 46378 | Docs: 350
+Max length 65536 | Current length 46232 | Docs: 360
+Max length 65536 | Current length 49274 | Docs: 370
+Max length 65536 | Current length 49505 | Docs: 380
+Max length 65536 | Current length 53510 | Docs: 390
+Max length 65536 | Current length 52172 | Docs: 400
+Max length 65536 | Current length 54466 | Docs: 410
+Max length 65536 | Current length 55239 | Docs: 420
+Max length 65536 | Current length 58490 | Docs: 430
+Max length 65536 | Current length 57677 | Docs: 440
+Max length 65536 | Current length 58238 | Docs: 450
+Max length 65536 | Current length 61532 | Docs: 460
+Max length 65536 | Current length 61565 | Docs: 470
+Max length 65536 | Current length 62273 | Docs: 480
+Max length 65536 | Current length 64969 | Docs: 490
+Max length 65536 | Current length 63320 | Docs: 500
+Max length 65536 | Current length 70532 | Docs: 510
+Number of documents: 500
+
+Prepare qa_2 with lines: 500 to benchmark_root/Llama-3-8B-Instruct-Gradient-1048k/synthetic/65536/data/qa_2/validation.jsonl
+Used time: 2.9 minutes
+[NeMo W 2024-11-16 00:48:14 nemo_logging:349] /home/ruyi/miniconda3/envs/duo/lib/python3.10/site-packages/megatron/core/tensor_parallel/layers.py:254: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+      def forward(
+    
+[NeMo W 2024-11-16 00:48:14 nemo_logging:349] /home/ruyi/miniconda3/envs/duo/lib/python3.10/site-packages/megatron/core/tensor_parallel/layers.py:265: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is   1%|          | 3/500 [01:06<3:02:45, 22.06s/it]  1%|          | 4/500 [01:28<3:02:05, 22.03s/it]  1%|          | 5/500 [01:52<3:07:36, 22.74s/it]  1%|          | 6/500 [02:15<3:10:10, 23.10s/it]  1%|▏         | 7/500 [02:39<3:11:35, 23.32s/it]  2%|▏         | 8/500 [03:04<3:15:34, 23.85s/it]  2%|▏         | 9/500 [03:28<3:15:18, 23.87s/it]  2%|▏         | 10/500 [03:54<3:19:07, 24.38s/it]  2%|▏         | 11/500 [04:17<3:17:08, 24.19s/it]  2%|▏         | 12/500 [04:42<3:17:07, 24.24s/it]  3%|▎         | 13/500 [05:07<3:19:41, 24.60s/it]  3%|▎         | 14/500 [05:31<3:18:28, 24.50s/it]  3%|▎         | 15/500 [05:55<3:16:48, 24.35s/it]  3%|▎         | 16/500 [06:20<3:16:21, 24.34s/it]  3%|▎         | 17/500 [06:46<3:19:29, 24.78s/it]  4%|▎         | 18/500 [07:10<3:19:13, 24.80s/it]  4%|▍         | 19/500 [07:36<3:21:28, 25.13s/it]  4%|▍         | 20/500 [08:02<3:21:50, 25.23s/it]  4%|▍         | 21/500 [08:26<3:18:06, 24.81s/it]  4%|▍         | 22/500 [08:51<3:17:55, 24.84s/it]  5%|▍         | 23/500 [09:15<3:15:43, 24.62s/it]  5%|▍         | 24/500 [09:40<3:18:05, 24.97s/it]  5%|▌         | 25/500 [10:06<3:18:05, 25.02s/it]  5%|▌         | 26/500 [10:30<3:17:01, 24.94s/it]  5%|▌         | 27/500 [10:55<3:15:56, 24.85s/it]: FutureWarning: `torch.library.impl_abstract` was renamed to `torch.library.register_fake`. Please use that instead; we will remove `torch.library.impl_abstract` in a future version of PyTorch.
+      @torch.library.impl_abstract("xformers_flash::flash_bwd")
+    
+Module data.synthetic.constants not found.
+Predict qa_2 
+from benchmark_root/Llama-3-8B-Instruct-Gradient-1048k/synthetic/65536/data/qa_2/validation.jsonl
+to benchmark_root/Llama-3-8B-Instruct-Gradient-1048k/synthetic/65536/pred/qa_2.jsonl
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:00,  3.91it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:00<00:00,  4.14it/s  1%|          | 4/500 [01:31<3:10:48, 23.08s/it]  1%|          | 5/500 [01:54<3:09:26, 22.96s/it]  1%|          | 6/500 [02:19<3:14:06, 23.58s/it]  1%|▏         | 7/500 [02:43<3:16:23, 23.90s/it]  2%|▏         | 8/500 [03:08<3:18:26, 24.20s/it]  2%|▏         | 9/500 [03:31<3:14:15, 23.74s/it]  2%|▏         | 10/500 [03:56<3:18:08, 24.26s/it]  2%|▏         | 11/500 [04:21<3:18:36, 24.37s/it]  2%|▏         | 12/500 [04:46<3:19:35, 24.54s/it]  3%|▎         | 13/500 [05:11<3:20:30, 24.70s/it]  3%|▎         | 14/500 [05:36<3:21:28, 24.87s/it]  3%|▎         | 15/500 [06:01<3:22:00, 24.99s/it]  3%|▎         | 16/500 [06:27<3:22:23, 25.09s/it]  3%|▎         | 17/500 [06:52<3:22:22, 25.14s/it]  4%|▎         | 18/500 [07:18<3:24:12, 25.42s/it]  4%|▍         | 19/500 [07:43<3:23:10, 25.34s/it]  4%|▍         | 20/500 [08:09<3:23:31, 25.44s/it]  4%|▍         | 21/500 [08:35<3:23:48, 25.53s/it]  4%|▍         | 22/500 [09:00<3:23:19, 25.52s/it]  5%|▍         | 23/500 [09:26<3:23:17, 25.57s/it]  5%|▍         | 24/500 [09:50<3:20:14, 25.24s/it]  5%|▌         | 25/500 [10:13<3:14:25, 24.56s/it]  5%|▌         | 26/500 [10:38<3:13:57, 24.55s/it]  5%|▌         | 27/500 [11:04<3:16:20, 24.91s/it]  6%|▌         | 28/500 [11:28<3:14:20, 24.70s/it]        | 18/500 [06:48<3:06:06, 23.17s/it]  4%|▍         | 19/500 [07:11<3:06:09, 23.22s/it]  4%|▍         | 20/500 [07:34<3:04:17, 23.04s/it]  4%|▍         | 21/500 [07:56<3:01:41, 22.76s/it]  4%|▍         | 22/500 [08:19<3:02:04, 22.86s/it]  5%|▍         | 23/500 [08:42<3:02:11, 22.92s/it]  5%|▍         | 24/500 [09:05<3:02:22, 22.99s/it]  5%|▌         | 25/500 [09:28<3:02:04, 23.00s/it]  5%|▌         | 26/500 [09:50<3:00:04, 22.80s/it]  5%|▌         | 27/500 [10:14<3:01:39, 23.04s/it]    
+[NeMo W 2024-11-16 00:46:25 nemo_logging:349] /home/ruyi/miniconda3/envs/duo/lib/python3.10/site-packages/megatron/core/tensor_parallel/layers.py:325: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+      def forward(
+    
+[NeMo W 2024-11-16 00:46:25 nemo_logging:349] /home/ruyi/miniconda3/envs/duo/lib/python3.10/site-packages/megatron/core/tensor_parallel/layers.py:360: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+      def backward(ctx, grad_output):
+    
+[NeMo W 2024-11-16 00:46:31 nemo_logging:349] /home/ruyi/miniconda3/envs/duo/lib/python3.10/site-packages/xformers/ops/fmha/flash.py:211: FutureWarning: `torch.library.impl_abstract` was renamed to `torch.library.register_fake`. Please use that instead; we will remove `torch.library.impl_abstract` in a future version of PyTorch.
+      @torch.library.impl_abstract("xformers_flash::flash_fwd")
+    
+[NeMo W 2024-11-16 00:46:31 nemo_logging:349] /home/ruyi/miniconda3/envs/duo/lib/python3.10/site-packages/xformers/ops/fmha/flash.py:344: FutureWarning: `torch.library.impl_abstract` was renamed to `torch.library.register_fake`. Please use that instead; we will remove `torch.library.impl_abstract` in a future version of PyTorch.
+      @torch.library.impl_abstract("xformers_flash::flash_bwd")
+    
+Module data.synthetic.constants not found.
+Predict niah_multivalue 
+from benchmark_root/Llama-3-8B-Instruct-Gradient-1048k/synthetic/65536/data/niah_multivalue/validation.jsonl
+to benchmark_root/Llama-3-8B-Instruct-Gradient-1048k/synthetic/65536/pred/niah_multivalue.jsonl
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:00,  3.33it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:00<00:00,  3.50it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:00<00:00,  3.57it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:01<00:00,  3.61it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:01<00:00,  3.57it/s]
+Enabling DuoAttention evaluation using sink size 64 and recent size 256
+Enabling tuple KV cache for Llama
+  0%|          | 0/500 [00:00<?, ?it/s]  0%|          | 1/500 [00:30<4:10:02, 30.06s/it]  0%|          | 2/500 [00:59<4:05:52, 29.62s/it]  1%|          | 3/500 [01:29<4:06:47, 29.79s/it]  1%|          | 4/500 [02:00<4:09:04, 30.13s/it]  1%|          | 5/500 [02:31<4:11:39, 30.50s/it]  1%|          | 6/500 [03:02<4:13:52, 30.83s/it]  1%|▏         | 7/500 [03:34<4:15:36, 31.11s/it]  2%|▏         | 8/500 [04:05<4:16:31, 31.28s/it]  2%|▏         | 9/500 [04:37<4:17:07, 31.42s/it]  2%|▏         | 10/500 [05:09<4:17:12, 31.49s/it]  2%|▏         | 11/500 [05:41<4:17:02, 31.54s/it]  2%|▏         | 12/500 [06:12<4:16:51, 31.58s/it]  3%|▎         | 13/500 [06:44<4:16:30, 31.60s/it]  3%|▎         | 14/500 [07:16<4:16:09, 31.62s/it]  3%|▎         | 15/500 [07:47<4:15:48, 31.65s/it]  3%|▎         | 16/500 [08:19<4:15:13, 31.64s/it]  3%|▎         | 17/500 [08:51<4:14:45, 31.65s/it]  4%|▎         | 18/500 [09:22<4:14:10, 31.64s/it]  4%|▍         | 19/500 [09:54<4:13:39, 31.64s/it]  4%|▍         | 20/500 [10:25<4:13:09, 31.64s/it]  4%|▍         | 21/500 [10:57<4:12:34, 31.64s/it]  4%|▍         | 22/500 [11:29<4:11:51, 31.61s/it]  5%|▍         | 23/500 [12:00<4:11:13, 31.60s/it] length 34371 | Words: 2030
+Max length 65536 | Current length 34822 | Words: 2040
+Max length 65536 | Current length 34828 | Words: 2050
+Max length 65536 | Current length 35035 | Words: 2060
+Max length 65536 | Current length 35032 | Words: 2070
+Max length 65536 | Current length 35491 | Words: 2080
+Max length 65536 | Current length 35721 | Words: 2090
+Max length 65536 | Current length 35626 | Words: 2100
+Max length 65536 | Current length 36082 | Words: 2110
+Max length 65536 | Current length 36017 | Words: 2120
+Max length 65536 | Current length 36259 | Words: 2130
+Max length 65536 | Current length 36589 | Words: 2140
+Max length 65536 | Current length 36462 | Words: 2150
+Max length 65536 | Current length 36740 | Words: 2160
+Max length 65536 | Current length 36857 | Words: 2170
+Max length 65536 | Current length 36988 | Words: 2180
+Max length 65536 | Current length 37305 | Words: 2190
+Max length 65536 | Current length 37430 | Words: 2200
+Max length 65536 | Current length 37623 | Words: 2210
+Max length 65536 | Current length 37761 | Words: 2220
+Max length 65536 | Current length 37727 | Words: 2230
+Max length 65536 | Current length 38070 | Words: 2240
+Max length 65536 | Current length 38284 | Words: 2250
+Max length 65536 | Current length 38376 | Words: 2260
+Max length 65536 | Current length 38389 | Words: 2270
+Max length 65536 | Current length 38851 | Words: 2280
+Max length 65536 | Current length 38627 | Words: 2290
+Max length 65536 | Current length 38975 | Words: 2300
+Max length 65536 | Current length 39298 | Words: 2310
+Max length 65536 | Current length 39253 | Words: 2320
+Max length 65536 | Current length 39478 | Words: 2330
+Max length 65536 | Current length 39590 | Words: 2340
+Max length 65536 | Current length 39988 | Words: 2350
+Max length 65536 | Current length 39864 | Words: 2360
+Max length 65536 | Current length 40143 | Words: 2370
+Max length 65536 | Current length 40306 | Words: 2380
+Max length 65536 | Current length 40446 | Words: 2390
+Max length 65536 | Current length 40649 | Words: 2400
+Max length 65536 | Current length 40947 | Words: 2410
+Max length 65536 | Current length 41033 | Words: 2420
+Max length 65536 | Current length 41127 | Words: 2430
+Max length 65536 | Current length 41158 | Words: 2440
+Max length 65536 | Current length 41426 | Words: 2450
+Max length 65536 | Current length 41582 | Words: 2460
+Max length 65536 | Current length 41751 | Words: 2470
+Max length 65536 | Current length 41971 | Words: 2480
+Max length 65536 | Current length 42229 | Words: 2490
+Max length 65536 | Current length 42352 | Words: 2500
+Max length 65536 | Current length 42338 | Words: 2510
+Max length 65536 | Current length 42673 | Words: 2520
+Max length 65536 | Current length 42877 | Words: 2530
+Max length 65536 | Current length 43048 | Words: 2540
+Max length 65536 | Current length 43160 | Words: 2550
+Max length 65536 | Current length 43319 | Words: 2560
+Max length 65536 | Current length 43404 | Words: 2570
+Max length 65536 | Current length 43698 | Words: 2580
+Max length 65536 | Current length 43701 | Words: 2590
+Max length 65536 | Current length 43945 | Words: 2600
+Max length 65536 | Current length 44173 | Words: 2610
+Max length 65536 | Current length 44291 | Words: 2620
+Max length 65536 | Current length 44382 | Words: 2630
+Max length 65536 | Current length 44578 | Words: 2640
+Max length 65536 | Current length 44695 | Words: 2650
+Max length 65536 | Current length 44804 | Words: 2660
+Max length 65536 | Current length 45002 | Words: 2670
+Max length 65536 | Current length 45157 | Words: 2680
+Max length 65536 | Current length 45305 | Words: 2690
+Max length 65536 | Current length 45557 | Words: 2700
+Max length 65536 | Current length 45518 | Words: 2710
+Max length 65536 | Current length 45797 | Words: 2720
+Max length 65536 | Current length 45999 | Words: 2730
+Max length 65536 | Current length 46106 | Words: 2740
+Max length 65536 | Current length 46129 | Words: 2750
+Max length 65536 | Current length 46462 | Words: 2760
+Max length 65536 | Current length 46618 | Words: 2770
+Max length 65536 | Current length 46808 | Words: 2780
+Max length 65536 | Current length 46907 | Words: 2790
+Max length 65536 | Current length 47086 | Words: 2800
+Max length 65536 | Current length 47250 | Words: 2810
+Max length 65536 | Current length 47396 | Words: 2820
+Max length 65536 | Current length 47571 | W[NeMo W 2024-11-16 00:46:01 nemo_logging:349] /home/ruyi/miniconda3/envs/duo/lib/python3.10/site-packages/megatron/core/tensor_parallel/layers.py:254: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+      def forward(
+    
+[NeMo W 2024-11-16 00:46:01 nemo_logging:349] /home/ruyi/miniconda3/envs/duo/lib/python3.10/site-packages/megatron/core/tensor_parallel/layers.py:265: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+      def backward(ctx, grad_output):
+    
+[NeMo W 2024-11-16 00:46:01 nemo_logging:349] /home/ruyi/miniconda3/envs/duo/lib/python3.10/site-packages/megatron/core/tensor_parallel/layers.py:325: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+      def forward(
+    
+[NeMo W 2024-11-16 00:46:01 nemo_logging:349] /home/ruyi/miniconda3/envs/duo/lib/python3.10/site-packages/megatron/core/tensor_parallel/layers.py:360: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+      def backward(ctx, grad_output):
+    
+[NeMo W 2024-11-16 00:46:05 nemo_logging:349] /home/ruyi/miniconda3/envs/duo/lib/python3.10/site-packages/xformers/ops/fmha/flash.py:211: FutureWarning: `torch.library.impl_abstract` was renamed to `torch.library.register_fake`. Please use that instead; we will remove `torch.library.impl_abstract` in a future version of PyTorch.
+      @torch.library.impl_abstract("xformers_flash::flash_fwd")
+    
+[NeMo W 2024-11-16 00:46:05 nemo_logging:349] /home/ruyi/miniconda3/envs/duo/lib/python3.10/site-packages/xformers/ops/fmha/flash.py:344: FutureWarning: `torch.library.impl_abstract` was renamed to `torch.library.register_fake`. Please use that instead; we will remove `torch.library.impl_abstract` in a future version of PyTorch.
+      @torch.library.impl_abstract("xformers_flash::flash_bwd")
+    
+Module data.synthetic.constants not found.
+Predict vt 
+from benchmark_root/Llama-3-8B-Instruct-Gradient-1048k/synthetic/65536/data/vt/validation.jsonl
+to benchmark_root/Llama-3-8B-Instruct-Gradient-1048k/synthetic/65536/pred/vt.jsonl
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:00,  3.15it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:00<00:00,  3.14it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:00<00:00,  3.20it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:01<00:00,  3.40it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:01<00:00,  3.31it/s]
+Enabling DuoAttention evaluation using sink size 64 and recent size 256
+Enabling tuple KV cache for Llama
+  0%|          | 0/500 [00:00<?, ?it/s]  0%|          | 1/500 [00:23<3:18:44, 23.90s/it]  0%|          | 2/500 [00:47<3:15:24, 23.54s/it]  1%|          | 3/500 [01:11<3:16:11, 23.69s/it]  1%|          | 4/500 [01:35<3:16:51, 23.81s/it]  1%|          | 5/500 [01:59<3:17:57, 23.99s/it]  1%|          | 6/500 [02:23<3:18:53, 24.16s/it]  1%|▏         | 7/500 [02:48<3:19:45, 24.31s/it]  2%|▏         | 8/500 [03:13<3:20:31, 24.45s/it]  2%|▏         | 9/500 [03:38<3:21:29, 24.62s/it]  2%|▏         | 10/500 [04:03<3:22:22, 24.78s/it]  2%|▏         | 11/500 [04:28<3:23:14, 24.94s/it]  2%|▏         | 12/500 [04:53<3:23:17, 25.00s/it]  3%|▎         | 13/500 [05:18<3:23:18, 25.05s/it]  3%|▎         | 14/500 [05:44<3:23:36, 25.14s/it]  3%|▎         | 15/500 [06:09<3:23:01, 25.12s/it]  3%|▎         | 16/500 [06:34<3:22:31, 25.11s/it]  3%|▎         | 17/500 [06:59<3:21:54, 25.08s/it]  4%|▎         | 18/500 [07:24<3:21:33, 25.09s/it]  4%|▍         | 19/500 [07:49<3:21:29, 25.13s/it]  4%|▍         | 20/500 [08:15<3:21:13, 25.15s/it]  4%|▍         | 21/500 [08:40<3:20:33, 25.12s/it]  4%|▍         | 22/500 [09:05<3:20:00, 25.11s/it]  5%|▍         | 23/500 [09:30<3:19:52, 25.14s/it]  5%|▍         | 24/500 [09:55<3:19:12, 25.11s/it]  5%|▌         | 25/500 [10:20<3:18:45, 25.11s/it]  5%|▌         | 26/500 [10:45<3:18:10, 25.09s/it]  5%|▌         | 27/500 [11:10<3:17:50, 25.10s/it]  6%|▌         | 28/500 [11:35<3:17:15, 25.08s/it]  6%|▌         | 29/500 [12:00<3:16:56, 25.09s/it]Max length 65536 | Current length 61316 | Words: 3670
+Max length 65536 | Current length 61475 | Words: 3680
+Max length 65536 | Current length 61532 | Words: 3690
+Max length 65536 | Current length 61686 | Words: 3700
+Max length 65536 | Current length 62083 | Words: 3710
+Max length 65536 | Current length 62275 | Words: 3720
+Max length 65536 | Current length 62269 | Words: 3730
+Max length 65536 | Current length 62279 | Words: 3740
+Max length 65536 | Current length 62718 | Words: 3750
+Max length 65536 | Current length 62741 | Words: 3760
+Max length 65536 | Current length 63041 | Words: 3770
+Max length 65536 | Current length 63108 | Words: 3780
+Max length 65536 | Current length 63244 | Words: 3790
+Max length 65536 | Current length 63294 | Words: 3800
+Max length 65536 | Current length 63436 | Words: 3810
+Max length 65536 | Current length 63751 | Words: 3820
+Max length 65536 | Current length 63892 | Words: 3830
+Max length 65536 | Current length 63986 | Words: 3840
+Max length 65536 | Current length 64374 | Words: 3850
+Max length 65536 | Current length 64451 | Words: 3860
+Max length 65536 | Current length 64399 | Words: 3870
+Max length 65536 | Current length 64820 | Words: 3880
+Max length 65536 | Current length 64872 | Words: 3890
+Max length 65536 | Current length 65025 | Words: 3900
+Max length 65536 | Current length 65083 | Words: 3910
+Max length 65536 | Current length 65033 | Words: 3920
+Max length 65536 | Current length 65650 | Words: 3930
+num_words: 3920
+
+Prepare cwe with lines: 500 to benchmark_root/Llama-3-8B-Instruct-Gradient-1048k/synthetic/65536/data/cwe/validation.jsonl
+Used time: 1.4 minutes
+[NeMo W 2024-11-16 00:46:06 nemo_logging:349] /home/ruyi/miniconda3/envs/duo/lib/python3.10/site-packages/megatron/core/tensor_parallel/layers.py:254: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+      def forward(
+    
+[NeMo W 2024-11-16 00:46:06 nemo_logging:349] /home/ruyi/miniconda3/envs/duo/lib/python3.10/site-packages/megatron/core/tensor_parallel/layers.py:265: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+      def backward(ctx, grad_output):
+    
+[NeMo W 2024-11-16 00:46:06 nemo_logging:349] /home/ruyi/miniconda3/envs/duo/lib/python3.10/site-packages/megatron/core/tensor_parallel/layers.py:325: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+      def forward(
+    
+[NeMo W 2024-11-16 00:46:06 nemo_logging:349] /home/ruyi/miniconda3/envs/duo/lib/python3.10/site-packages/megatron/core/tensor_parallel/layers.py:360: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+      def backward(ctx, grad_output):
+    
+[NeMo W 2024-11-16 00:46:13 nemo_logging:349] /home/ruyi/miniconda3/envs/duo/lib/python3.10/site-packages/xformers/ops/fmha/flash.py:211: FutureWarning: `torch.library.impl_abstract` was renamed to `torch.library.register_fake`. Please use that instead; we will remove `torch.library.impl_abstract` in a future version of PyTorch.
+      @torch.library.impl_abstract("xformers_flash::flash_fwd")
+    
+[NeMo W 2024-11-16 00:46:13 nemo_logging:349] /home/ruyi/miniconda3/envs/duo/lib/python3.10/site-packages/xformers/ops/fmha/flash.py:344: FutureWarning: `torch.library.impl_abstract` was renamed to `torch.library.register_fake`. Please use that instead; we will remove `torch.library.impl_abstract` in a future version of PyTorch.
+      @torch.library.impl_abstract("xformers_flash::flash_bwd")
+    
+Module data.synthetic.constants not found.
+Predict cwe 
+from benchmark_root/Llama-3-8B-Instruct-Gradient-1048k/synthetic/65536/data/cwe/validation.jsonl
+to benchmark_root/Llama-3-8B-Instruct-Gradient-1048k/synthetic/65536/pred/cwe.jsonl
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:00,  3.92it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:00<00:00,  3.97it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:00<00:00,  4.10it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00,  4.23it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00,  4.15it/s]
+Enabling DuoAttention evaluation using sink size 64 and recent size 256
+Enabling tuple KV cache for Llama
+  0%|          | 0/500 [00:00<?, ?it/s]  0%|          | 1/500 [00:30<4:11:16, 30.21s/it]  0%|          | 2/500 [00:59<4:05:47, 29.61s/it]  1%|          | 3/500 [01:29<4:07:47, 29.91s/it]  1%|          | 4/500 [02:00<4:10:08, 30.26s/it]  1%|          | 5/500 [02:31<4:12:37, 30.62s/it]  1%|          | 6/500 [03:03<4:16:00, 31.09s/it]  1%|▏         | 7/500 [03:35<4:18:35, 31.47s/it]  2%|▏         | 8/500 [04:08<4:19:48, 31.68s/it]  2%|▏         | 9/500 [04:40<4:20:30, 31.83s/it]  2%|▏         | 10/500 [05:12<4:22:04, 32.09s/it]  2%|▏         | 11/500 [05:45<4:23:54, 32.38s/it]  2%|▏         | 12/500 [06:18<4:23:12, 32.36s/it]  3%|▎         | 13/500 [06:50<4:22:12, 32.31s/it]  3%|▎         | 14/500 [07:22<4:21:33, 32.29s/it]  3%|▎         | 15/500 [07:55<4:21:04, 32.30s/it]  3%|▎         | 16/500 [08:27<4:20:58, 32.35s/it]  3%|▎         | 17/500 [08:59<4:20:15, 32.33s/it]  4%|▎         | 18/500 [09:32<4:20:01, 32.37s/it]  4%|▍         | 19/500 [10:05<4:20:52, 32.54s/it]  4%|▍         | 20/500 [10:37<4:19:47, 32.47s/it]  4%|▍         | 21/500 [11:09<4:18:24, 32.37s/it]  4%|▍         | 22/500 [11:41<4:17:13, 32.29s/it]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         ax length 131072 | Current length 96121 | Words: 5810
+Max length 131072 | Current length 96275 | Words: 5820
+Max length 131072 | Current length 96396 | Words: 5830
+Max length 131072 | Current length 96404 | Words: 5840
+Max length 131072 | Current length 96585 | Words: 5850
+Max length 131072 | Current length 96810 | Words: 5860
+Max length 131072 | Current length 96981 | Words: 5870
+Max length 131072 | Current length 97125 | Words: 5880
+Max length 131072 | Current length 97309 | Words: 5890
+Max length 131072 | Current length 97595 | Words: 5900
+Max length 131072 | Current length 97810 | Words: 5910
+Max length 131072 | Current length 97649 | Words: 5920
+Max length 131072 | Current length 97935 | Words: 5930
+Max length 131072 | Current length 98234 | Words: 5940
+Max length 131072 | Current length 98354 | Words: 5950
+Max length 131072 | Current length 98532 | Words: 5960
+Max length 131072 | Current length 98551 | Words: 5970
+Max length 131072 | Current length 98626 | Words: 5980
+Max length 131072 | Current length 99166 | Words: 5990
+Max length 131072 | Current length 99077 | Words: 6000
+Max length 131072 | Current length 99387 | Words: 6010
+Max length 131072 | Current length 99549 | Words: 6020
+Max length 131072 | Current length 99621 | Words: 6030
+Max length 131072 | Current length 99773 | Words: 6040
+Max length 131072 | Current length 99837 | Words: 6050
+Max length 131072 | Current length 99973 | Words: 6060
+Max length 131072 | Current length 100123 | Words: 6070
+Max length 131072 | Current length 100381 | Words: 6080
+Max length 131072 | Current length 100446 | Words: 6090
+Max length 131072 | Current length 100758 | Words: 6100
+Max length 131072 | Current length 100764 | Words: 6110
+Max length 131072 | Current length 101186 | Words: 6120
+Max length 131072 | Current length 101101 | Words: 6130
+Max length 131072 | Current length 101353 | Words: 6140
+Max length 13107Enabling DuoAttention evaluation using sink size 64 and recent size 256
+Enabling tuple KV cache for Llama
+  0%|          | 0/500 [00:00<?, ?it/s]  0%|          | 1/500 [01:08<9:28:30, 68.36s/it]  0%|          | 2/500 [02:19<9:42:39, 70.20s/it]  1%|          | 3/500 [03:34<9:56:48, 72.05s/it]  1%|          | 4/500 [04:50<10:08:31, 73.61s/it]  1%|          | 5/500 [06:06<10:14:54, 74.54s/it]  1%|          | 6/500 [07:22<10:19:04, 75.19s/it]  1%|▏         | 7/500 [08:38<10:20:13, 75.48s/it]  2%|▏         | 8/500 [09:55<10:21:32, 75.80s/it]  2%|▏         | 9/500 [11:11<10:20:54, 75.88s/it]  2%|▏         | 10/500 [12:27<10:20:34, 75.99s/it]  2%|▏         | 11/500 [13:43<10:18:53, 75.94s/it]  2%|▏         | 12/500 [14:59<10:17:47, 75.96s/it]  3%|▎         | 13/500 [16:15<10:16:04, 75.90s/it]Max length 131072 | Current length 103864 | Words: 6300
+Max length 131072 | Current length 104047 | Words: 6310
+Max length 131072 | Current length 104325 | Words: 6320
+Max length 131072 | Current length 104489 | Words: 6330
+Max length 131072 | Current length 104622 | Words: 6340
+Max length 131072 | Current length 104908 | Words: 6350
+Max length 131072 | Current length 104908 | Words: 6360
+Max length 131072 | Current length 105263 | Words: 6370
+Max length 131072 | Current length 105285 | Words: 6380
+Max length 131072 | Current length 105316 | Words: 6390
+Max length 131072 | Current length 105740 | Words: 6400
+Max length 131072 | Current length 105808 | Words: 6410
+Max length 131072 | Current length 105919 | Words: 6420
+Max length 131072 | Current length 106118 | Words: 6430
+Max length 131072 | Current length 106217 | Words: 6440
+Max length 131072 | Current length 106315 | Words: 6450
+Max length 131072 | Current length 106646 | Words: 6460
+Max length 131072 | Current length 106719 | Words: 6470
+Max length 131072 | Current length 106789 | Words: 6480
+Max length 131072 | Current length 106902 | Words: 6490
+Max length 131072 | Current length 107123 | Words: 6500
+Max length 131072 | Current length 107474 | Words: 6510
+Max length 131072 | Current length 107644 | Words: 6520
+Max length 131072 | Current length 107680 | Words: 6530
+Max length 131072 | Current length                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+[NeMo W 2024-11-16 00:41:31 nemo_logging:349] /home/ruyi/miniconda3/envs/duo/lib/python3.10/site-packages/megatron/core/tensor_parallel/layers.py:254: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+      def forward(
+    
+[NeMo W 2024-11-16 00:41:31 nemo_logging:349] /home/ruyi/miniconda3/envs/duo/lib/python3.10/site-packages/megatron/core/tensor_parallel/layers.py:265: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+      def backward(ctx, grad_output):
+    
+[NeMo W 2024-11-16 00:41:31 nemo_logging:349] /home/ruyi/miniconda3/envs/duo/lib/python3.10/site-packages/megatron/core/tensor_parallel/layers.py:325: FutureWarning: `torch.cuda.amp.custom_fwd(args...)` is deprecated. Please use `torch.amp.custom_fwd(args..., device_type='cuda')` instead.
+      def forward(
+    
+[NeMo W 2024-11-16 00:41:31 nemo_logging:349] /home/ruyi/miniconda3/envs/duo/lib/python3.10/site-packages/megatron/core/tensor_parallel/layers.py:360: FutureWarning: `torch.cuda.amp.custom_bwd(args...)` is deprecated. Please use `torch.amp.custom_bwd(args..., device_type='cuda')` instead.
+      def backward(ctx, grad_output):
+    
+[NeMo W 2024-11-16 00:41:33 nemo_logging:349] /home/ruyi/miniconda3/envs/duo/lib/python3.10/site-packages/xformers/ops/fmha/flash.py:211: FutureWarning: `torch.library.impl_abstract` was renamed to `torch.library.register_fake`. Please use that instead; we will remove `torch.library.impl_abstract` in a future version of PyTorch.
+      @torch.library.impl_abstract("xformers_flash::flash_fwd")
+    
+[NeMo W 2024-11-16 00:41:33 nemo_logging:349] /home/ruyi/miniconda3/envs/duo/lib/python3.10/site-packages/xformers/ops/fmha/flash.py:344: FutureWarning: `torch.library.impl_abstract` was renamed to `torch.library.register_fake`. Please use that instead; we will remove `torch.library.impl_abstract` in a future version of PyTorch.
+      @torch.library.impl_abstract("xformers_flash::flash_bwd")
+    
+Module data.synthetic.constants not found.
+Predict cwe 
+from benchmark_root/Llama-3-8B-Instruct-Gradient-1048k/synthetic/131072/data/cwe/validation.jsonl
+to benchmark_root/Llama-3-8B-Instruct-Gradient-1048k/synthetic/131072/pred/cwe.jsonl
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:00<00:00,  4.65it/s]Loading checkpoint shards:  50%|█████     | 2/4 [00:00<00:00,  4.89it/s]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:00<00:00,  4.96it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00,  5.09it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00,  5.00it/s]
+Enabling DuoAttention evaluation using sink size 64 and recent size 256
+Enabling tuple KV cache for Llama
+  0%|          | 0/500 [00:00<?, ?it/s]  0%|          | 1/500 [01:17<10:46:44, 77.76s/it]  0%|          | 2/500 [02:37<10:55:47, 79.01s/it]  1%|          | 3/500 [03:57<10:57:11, 79.34s/it]  1%|          | 4/500 [05:18<11:01:15, 79.99s/it]  1%|          | 5/500 [06:39<11:02:02, 80.25s/it]  1%|          | 6/500 [08:00<11:02:56, 80.52s/it]  1%|▏         | 7/500 [09:21<11:03:04, 80.70s/it]  2%|▏         | 8/500 [10:42<11:02:33, 80.80s/it]  2%|▏         | 9/500 [12:02<11:00:29, 80.71s/it]  2%|▏         | 10/500 [13:22<10:57:29, 80.51s/it]  2%|▏         | 11/500 [14:45<11:01:06, 81.12s/it]  2%|▏         | 12/500 [16:06<10:59:22, 81.07s/it]
