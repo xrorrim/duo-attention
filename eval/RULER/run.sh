@@ -23,12 +23,13 @@ fi
 
 
 # Root Directories
-GPUS="1" # GPU size for tensor_parallel.
+GPUS="1" #TODO: support more than 1 GPU to test duo attention.
 ROOT_DIR="benchmark_root" # the path that stores generated task samples and model predictions.
-MODEL_DIR="/home/ruyi/code/duo-attention/models" # the path that contains individual model folders from HUggingface.
+MODEL_DIR="path/contains/your/model/folder" # the path that contains individual model folders from HUggingface.
+PARTTERN_PATH="path/contains/full_attention_heads.tsv" # the path to parttern of duo-attention.
 ENGINE_DIR="." # the path that contains individual engine folders from TensorRT-LLM.
 BATCH_SIZE=1  # increase to improve GPU utilization
-
+SPARSITY=0.5  # sparsity you want to use 
 
 # Model and Tokenizer
 source config_models.sh
@@ -88,7 +89,7 @@ fi
 total_time=0
 for MAX_SEQ_LENGTH in "${SEQ_LENGTHS[@]}"; do
     
-    RESULTS_DIR="${ROOT_DIR}/${MODEL_NAME}/${BENCHMARK}/${MAX_SEQ_LENGTH}"
+    RESULTS_DIR="${ROOT_DIR}/${MODEL_NAME}-sparsity${SPARSITY}/${BENCHMARK}/${MAX_SEQ_LENGTH}"
     DATA_DIR="${RESULTS_DIR}/data"
     PRED_DIR="${RESULTS_DIR}/pred"
     mkdir -p ${DATA_DIR}
@@ -118,15 +119,17 @@ for MAX_SEQ_LENGTH in "${SEQ_LENGTHS[@]}"; do
             --top_k ${TOP_K} \
             --top_p ${TOP_P} \
             --batch_size ${BATCH_SIZE} \
+            --sparsity ${SPARSITY} \
+            --parttern_path ${PARTTERN_PATH} \
             ${STOP_WORDS}
         end_time=$(date +%s)
         time_diff=$((end_time - start_time))
         total_time=$((total_time + time_diff))
     done
     
-    # python eval/evaluate.py \
-    #     --data_dir ${PRED_DIR} \
-    #     --benchmark ${BENCHMARK}
+    python eval/evaluate.py \
+        --data_dir ${PRED_DIR} \
+        --benchmark ${BENCHMARK}
 done
 
 echo "Total time spent on call_api: $total_time seconds"

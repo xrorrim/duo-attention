@@ -6,9 +6,9 @@ import torch
 
 
 
-def load_model_and_tokenizer():
+def load_model_and_tokenizer(model_name_or_path,parttern_path, sparsity = 0.5):
     model = transformers.AutoModelForCausalLM.from_pretrained(
-        "/home/ruyi/code/duo-attention/models/Llama-3-8B-Instruct-Gradient-1048k",
+        model_name_or_path,
         torch_dtype=torch.bfloat16,
         low_cpu_mem_usage=True,
         attn_implementation="eager",
@@ -16,12 +16,12 @@ def load_model_and_tokenizer():
 
     # Load the attention pattern
     attn_heads, sink_size, recent_size = load_attn_pattern(
-        "/home/ruyi/code/duo-attention/attn_patterns/Llama-3-8B-Instruct-Gradient-1048k/lr=0.02-reg=0.05-ctx=1000_32000-multi_passkey10"
+        parttern_path
     )
 
     # Sparsify attention heads
-    attn_heads, sparsity = sparsify_attention_heads(attn_heads, sparsity=0.5)
-
+    attn_heads, sparsity = sparsify_attention_heads(attn_heads, sparsity=sparsity)
+    print(f"sparsity right now is {sparsity}")
     # Enable DuoAttention
     enable_duo_attention_eval(
         model,
@@ -33,7 +33,7 @@ def load_model_and_tokenizer():
     # Move model to GPU
     model = model.cuda()
     tokenizer = AutoTokenizer.from_pretrained(
-        "/home/ruyi/code/duo-attention/models/Llama-3-8B-Instruct-Gradient-1048k", trust_remote_code=True, use_fast=False
+       model_name_or_path, trust_remote_code=True, use_fast=False
     )
     
     return model, tokenizer
