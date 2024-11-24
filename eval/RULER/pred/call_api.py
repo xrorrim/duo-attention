@@ -103,82 +103,11 @@ parser.add_argument("--sparsity", type=float, default=0.5)
 
 args = parser.parse_args()
 args.stop_words = list(filter(None, args.stop_words.split(',')))
-if args.server_type == 'duo' or args.server_type == 'gemini':
-    args.threads = 1
+args.threads = 1
 
 
 def get_llm(tokens_to_generate):
-    if args.server_type == 'trtllm':
-        from client_wrappers import TRTLLMClient
-        llm = TRTLLMClient(
-            server_host=args.server_host,
-            server_port=args.server_port,
-            ssh_server=args.ssh_server,
-            ssh_key_path=args.ssh_key_path,
-            temperature=args.temperature,
-            top_k=args.top_k,
-            top_p=args.top_p,
-            random_seed=args.random_seed,
-            stop=args.stop_words,
-            tokens_to_generate=tokens_to_generate,
-            max_attention_window_size=args.sliding_window_size,
-        )
-
-    elif args.server_type == 'vllm':
-        from client_wrappers import VLLMClient
-        llm = VLLMClient(
-            server_host=args.server_host,
-            server_port=args.server_port,
-            ssh_server=args.ssh_server,
-            ssh_key_path=args.ssh_key_path,
-            temperature=args.temperature,
-            top_k=args.top_k,
-            top_p=args.top_p,
-            random_seed=args.random_seed,
-            stop=args.stop_words,
-            tokens_to_generate=tokens_to_generate,
-        )
-
-    elif args.server_type == 'sglang':
-        from client_wrappers import SGLClient
-        llm = SGLClient(
-            server_host=args.server_host,
-            server_port=args.server_port,
-            ssh_server=args.ssh_server,
-            ssh_key_path=args.ssh_key_path,
-            temperature=args.temperature,
-            top_k=args.top_k,
-            top_p=args.top_p,
-            random_seed=args.random_seed,
-            stop=args.stop_words,
-            tokens_to_generate=tokens_to_generate,
-        )
-        
-    elif args.server_type == 'openai':
-        from client_wrappers import OpenAIClient
-        llm = OpenAIClient(
-            model_name=args.model_name_or_path,
-            temperature=args.temperature,
-            top_k=args.top_k,
-            top_p=args.top_p,
-            random_seed=args.random_seed,
-            stop=args.stop_words,
-            tokens_to_generate=tokens_to_generate,
-        )
-
-    elif args.server_type == 'gemini':
-        from client_wrappers import GeminiClient
-        llm = GeminiClient(
-            model_name=args.model_name_or_path,
-            temperature=args.temperature,
-            top_k=args.top_k,
-            top_p=args.top_p,
-            random_seed=args.random_seed,
-            stop=args.stop_words,
-            tokens_to_generate=tokens_to_generate,
-        )
-        
-    elif args.server_type == 'duo':
+    if args.server_type == 'duo':
         from model_wrappers import DuoAttentionModel
         if args.sparsity is not None:
             sparsity = args.sparsity
@@ -198,21 +127,6 @@ def get_llm(tokens_to_generate):
             stop=args.stop_words,
             max_new_tokens=tokens_to_generate,
         )
-    
-    elif args.server_type == 'mamba':
-        from model_wrappers import MambaModel
-        # mamba uses its own generation function, do not pass in do_sample
-        # https://github.com/state-spaces/mamba/blob/009bec5ee37f586844a3fc89c040a9c1a9d8badf/mamba_ssm/utils/generation.py#L121
-        llm = MambaModel(
-            name_or_path=args.model_name_or_path,
-            repetition_penalty=1,
-            temperature=args.temperature,
-            top_k=args.top_k,
-            top_p=args.top_p,
-            stop=args.stop_words,
-            max_new_tokens=tokens_to_generate,
-        )
-        
     else:
         raise RuntimeError(f'Unsupported server type {args.server_type}')
 

@@ -29,7 +29,7 @@ MODEL_DIR="path/contains/your/model/folder" # the path that contains individual 
 PARTTERN_PATH="path/contains/full_attention_heads.tsv" # the path to parttern of duo-attention.
 ENGINE_DIR="." # the path that contains individual engine folders from TensorRT-LLM.
 BATCH_SIZE=1  # increase to improve GPU utilization
-SPARSITY=0.5  # sparsity you want to use 
+SPARSITY=0  # sparsity you want to use 
 
 # Model and Tokenizer
 source config_models.sh
@@ -95,37 +95,37 @@ for MAX_SEQ_LENGTH in "${SEQ_LENGTHS[@]}"; do
     mkdir -p ${DATA_DIR}
     mkdir -p ${PRED_DIR}
     
-    for TASK in "${TASKS[@]}"; do
-        python data/prepare.py \
-            --save_dir ${DATA_DIR} \
-            --benchmark ${BENCHMARK} \
-            --task ${TASK} \
-            --tokenizer_path ${TOKENIZER_PATH} \
-            --tokenizer_type ${TOKENIZER_TYPE} \
-            --max_seq_length ${MAX_SEQ_LENGTH} \
-            --model_template_type ${MODEL_TEMPLATE_TYPE} \
-            --num_samples ${NUM_SAMPLES} \
-            ${REMOVE_NEWLINE_TAB}
+    # for TASK in "${TASKS[@]}"; do
+    #     python data/prepare.py \
+    #         --save_dir ${DATA_DIR} \
+    #         --benchmark ${BENCHMARK} \
+    #         --task ${TASK} \
+    #         --tokenizer_path ${TOKENIZER_PATH} \
+    #         --tokenizer_type ${TOKENIZER_TYPE} \
+    #         --max_seq_length ${MAX_SEQ_LENGTH} \
+    #         --model_template_type ${MODEL_TEMPLATE_TYPE} \
+    #         --num_samples ${NUM_SAMPLES} \
+    #         ${REMOVE_NEWLINE_TAB}
         
-        start_time=$(date +%s)
-        python pred/call_api.py \
-            --data_dir ${DATA_DIR} \
-            --save_dir ${PRED_DIR} \
-            --benchmark ${BENCHMARK} \
-            --task ${TASK} \
-            --server_type ${MODEL_FRAMEWORK} \
-            --model_name_or_path ${MODEL_PATH} \
-            --temperature ${TEMPERATURE} \
-            --top_k ${TOP_K} \
-            --top_p ${TOP_P} \
-            --batch_size ${BATCH_SIZE} \
-            --sparsity ${SPARSITY} \
-            --parttern_path ${PARTTERN_PATH} \
-            ${STOP_WORDS}
-        end_time=$(date +%s)
-        time_diff=$((end_time - start_time))
-        total_time=$((total_time + time_diff))
-    done
+    #     start_time=$(date +%s)
+    #     python pred/call_api.py \
+    #         --data_dir ${DATA_DIR} \
+    #         --save_dir ${PRED_DIR} \
+    #         --benchmark ${BENCHMARK} \
+    #         --task ${TASK} \
+    #         --server_type ${MODEL_FRAMEWORK} \
+    #         --model_name_or_path ${MODEL_PATH} \
+    #         --temperature ${TEMPERATURE} \
+    #         --top_k ${TOP_K} \
+    #         --top_p ${TOP_P} \
+    #         --batch_size ${BATCH_SIZE} \
+    #         --sparsity ${SPARSITY} \
+    #         --parttern_path ${PARTTERN_PATH} \
+    #         ${STOP_WORDS}
+    #     end_time=$(date +%s)
+    #     time_diff=$((end_time - start_time))
+    #     total_time=$((total_time + time_diff))
+    # done
     
     python eval/evaluate.py \
         --data_dir ${PRED_DIR} \

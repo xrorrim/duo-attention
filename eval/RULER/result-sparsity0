@@ -1,0 +1,37 @@
+128K
+OOM
+64K
+=============================================
+
+      0              1              2              3                4                5                6                7                8      9      10     11     12     13
+0  Tasks  niah_single_1  niah_single_2  niah_single_3  niah_multikey_1  niah_multikey_2  niah_multikey_3  niah_multivalue  niah_multiquery     vt    cwe    fwe   qa_1   qa_2
+1  Score          100.0          100.0          100.0             98.4            98.33             36.0            94.45            97.51  65.87   0.42   75.6   72.9   44.8
+2  Nulls          0/500          0/500          0/500            0/500            0/538            0/500            0/500            0/532  0/937  0/500  0/500  0/155  0/500
+32K
+=============================================
+
+       0              1              2                3                4                5      6      7      8      9
+0  Tasks  niah_single_1  niah_single_3  niah_multikey_1  niah_multivalue  niah_multiquery     vt    cwe    fwe   qa_1
+1  Score          100.0          100.0             98.4            94.55            97.75  77.12   0.84   87.0   70.2
+2  Nulls          0/500          0/500            0/500            0/500            0/500  0/500  0/500  0/500  0/500
+16K
+=============================================
+
+      0              1              2              3                4                5                6                7      8      9      10     11
+0  Tasks  niah_single_1  niah_single_2  niah_single_3  niah_multikey_1  niah_multikey_2  niah_multivalue  niah_multiquery     vt    cwe    fwe   qa_2
+1  Score          100.0          100.0          99.69            97.67             99.0            95.18            95.93  84.17  37.53   89.4   52.8
+2  Nulls          0/500          0/500          0/649             0/86           0/1000            0/912             0/86  0/786   0/89  0/833  0/500
+8K
+=============================================
+
+      0              1              2              3                4                5                6      7      8      9       10
+0  Tasks  niah_single_1  niah_single_2  niah_single_3  niah_multikey_1  niah_multikey_2  niah_multiquery    cwe    fwe   qa_1    qa_2
+1  Score          100.0          100.0          100.0             98.2             99.4            98.12  79.34   82.8  77.53    56.8
+2  Nulls          0/500          0/500          0/500            0/500            0/500            0/133  0/500  0/500  0/592  0/1000
+4K
+=============================================
+
+       0              1              2              3                4                5                6      7
+0  Tasks  niah_single_1  niah_single_2  niah_single_3  niah_multikey_1  niah_multikey_2  niah_multiquery    cwe
+1  Score          100.0           99.8          100.0             98.8            98.48              0.0  100.0
+2  Nulls          0/500          0/500          0/500            0/500             0/66              0/0    0/1
